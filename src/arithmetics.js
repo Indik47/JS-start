@@ -12,7 +12,7 @@ outputResult();
 
 
 function askUserInput() {
-    operator = askInputOperator("Enter an arithmetic operation (add, subtract, divide, multiply):");
+    askInputOperator("Enter an arithmetic operation (add, subtract, divide, multiply):");
     firstNum = askInputNum("Enter first number");
     secondNum = askInputNum("Enter second number");
 };
@@ -24,19 +24,19 @@ function askInputNum(message) {
     return inputNum;
 }
 function askInputOperator(message) {
-    let operator = prompt(message);
-    switch (operator) {
+    let input = prompt(message);
+    switch (input) {
         case 'add':
-            return '+'
+            operator = '+';
             break;
-        case 'substract':
-            return '-'
+        case 'subtract':
+            operator = '-';
             break;
         case 'divide':
-            return '/'
+            operator = '/';
             break;
         case 'multiply':
-            return '*'
+            operator = '*';
             break;
         default:
             askInputOperator("Enter one of those -> add, subtract, divide or multiply");
