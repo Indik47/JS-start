@@ -24,24 +24,26 @@ function askInputNum(message) {
     return inputNum;
 }
 function askInputOperator(message) {
-    let input = prompt(message);
-    switch (input) {
-        case 'add':
-            return '+';
+    let inputOperator;
+    let userInput = prompt(message);
+    switch (userInput) {
+        case "add":
+            inputOperator =  "+";
             break;
-        case 'subtract':
-            return '-';
+        case "subtract":
+            inputOperator =  "+";
             break;
-        case 'divide':
-            return '/';
+        case "divide":
+            inputOperator =  "/";
             break;
         case 'multiply':
-            return '*';
+            inputOperator =  "*";
             break;
         default:
-            askInputOperator("Enter one of those -> add, subtract, divide or multiply");
+            inputOperator = askInputOperator("Enter one of those -> add, subtract, divide or multiply");
             break;
     }
+    return inputOperator;
 }
 function checkDivisionByZero(operator, secondNum) {
     if (operator !== '/') { return false; }
