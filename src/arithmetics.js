@@ -3,28 +3,40 @@
 let operator;
 let numbers = [];
 
-askUserInput();
-while (checkDivisionByZero(operator, numbers[1])) {
-    numbers[1] = askInputNum("Division by 0. Enter non-0 second number");
+try {
+    calculator();
 }
-outputResult();
+catch (e) {
+    alert("Cancelled")
+}
 
-function askUserInput() {
+function calculator() {
     operator = askInputOperator("Enter an arithmetic operation (add, subtract, divide, multiply):");
     numbers[0] = askInputNum("Enter first number");
     numbers[1] = askInputNum("Enter second number");
-};
-function askInputNum(message) {
-    let inputNum = parseInt(prompt(message));
-    if (isNaN(inputNum)) {
-        askInputNum("Wrong input! Enter a number one more time:");
+
+    if (checkDivisionByZero(operator, numbers[1])) {
+        alert("Division by 0");
+    } else {
+        outputResult();
     }
-    return inputNum;
+}
+
+function askInputNum(message) {
+    let userInput = prompt(message);
+    if (userInput === null) { throw new Error("User cancelled"); }
+    userInput = parseInt(userInput);
+    if (isNaN(userInput)) {
+        userInput = askInputNum("Wrong input! Enter a number one more time:");
+    }
+    return userInput;
 }
 function askInputOperator(message) {
     let inputOperator;
     let userInput = prompt(message);
     switch (userInput) {
+        case null:
+            throw new Error("User cancelled");
         case "add":
             inputOperator =  "+";
             break;
