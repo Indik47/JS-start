@@ -1,20 +1,18 @@
 "use strict";
 
 let operator;
-let firstNum;
-let secondNum;
+let numbers = [];
 
 askUserInput();
-while (checkDivisionByZero(operator, secondNum)) {
-    secondNum = askInputNum("Division by 0. Enter non-0 second number");
+while (checkDivisionByZero(operator, numbers[1])) {
+    numbers[1] = askInputNum("Division by 0. Enter non-0 second number");
 }
 outputResult();
 
-
 function askUserInput() {
     operator = askInputOperator("Enter an arithmetic operation (add, subtract, divide, multiply):");
-    firstNum = askInputNum("Enter first number");
-    secondNum = askInputNum("Enter second number");
+    numbers[0] = askInputNum("Enter first number");
+    numbers[1] = askInputNum("Enter second number");
 };
 function askInputNum(message) {
     let inputNum = parseInt(prompt(message));
@@ -31,7 +29,7 @@ function askInputOperator(message) {
             inputOperator =  "+";
             break;
         case "subtract":
-            inputOperator =  "+";
+            inputOperator =  "-";
             break;
         case "divide":
             inputOperator =  "/";
@@ -45,13 +43,13 @@ function askInputOperator(message) {
     }
     return inputOperator;
 }
-function checkDivisionByZero(operator, secondNum) {
+function checkDivisionByZero(operator, number) {
     if (operator !== '/') { return false; }
-    if (secondNum !== 0) { return false;}
+    if (number !== 0) { return false;}
     return true;
 }
 function outputResult(){
-    let result = eval(firstNum + operator + secondNum);
+    let result = eval(numbers[0] + operator + numbers[1]);
     alert (result);
 };
 
