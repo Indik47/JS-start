@@ -1,2 +1,7 @@
-.idea
-*.css
+.idea/
+node_modules/
+.sass-cache
+
+
+
+
