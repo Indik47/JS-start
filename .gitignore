@@ -1,12 +1,7 @@
 .idea/
 node_modules/
-*.css
 .sass-cache
-./src/css
- src/scss/
-Gruntfile.js
-package-lock.json
-package.json
+
 
 
 

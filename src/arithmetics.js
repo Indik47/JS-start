@@ -1,68 +1,60 @@
+'use strict';
 let operator;
 const numbers = [];
 
 function askInputOperator(message) {
-  let inputOperator;
-  const userInput = prompt(message);
-  switch (userInput) {
-    case 'add':
-      inputOperator = '+';
-      break;
-    case 'subtract':
-      inputOperator = '-';
-      break;
-    case 'divide':
-      inputOperator = '/';
-      break;
-    case 'multiply':
-      inputOperator = '*';
-      break;
+  const input = prompt(message);
+  switch (input) {
+    case '+':
+    case '-':
+    case '/':
+    case '*':
+      return input;
+    case null:
+      throw new Error('Cancelled');
     default:
-      throw new Error('User cancelled');
+      return undefined;
   }
-  return inputOperator;
 }
-function askInputNum(message) {
-  const userInput = prompt(message);
+function askInputNumber(message) {
+  const input = prompt(message);
 
-  if (userInput === null) {
-    throw new Error('User cancelled');
+  if (input === null) {
+    throw new Error('Cancelled');
   }
 
-  return parseInt(userInput);
+  return parseInt(input);
 }
 function askUserInput() {
-  operator = askInputOperator('Enter an arithmetic operation (add, subtract, divide, multiply):');
-
   while (isNaN(numbers[0])) {
-    numbers[0] = askInputNum('Enter first number');
+    numbers[0] = askInputNumber('First number (cancel to exit)');
+  }
+  while (operator === undefined) {
+    operator = askInputOperator('+     -     /    *     (cancel to exit):');
   }
 
   while (isNaN(numbers[1])) {
-    numbers[1] = askInputNum('Enter second number');
+    numbers[1] = askInputNumber('Second number (cancel to exit)');
   }
-}
-function outputResult() {
-  const result = eval(numbers[0] + operator + numbers[1]);
-  alert(result);
 }
 function checkDivisionByZero(number) {
   if (number !== 0) return false;
   return true;
 }
+function outputResult() {
+  const result = `${numbers[0]} ${operator} ${numbers[1]}`;
+  alert(`${result} = ${eval(result)}`);
+}
 function calculate() {
-  if (operator !== '/') {
-    outputResult();
-    return;
+  if ( operator === '/' && checkDivisionByZero(numbers[1])) {
+    throw new Error('Division by 0');
   }
-  if ( checkDivisionByZero(numbers[1]) ) {
-    alert('Division by 0');
-  }
+  outputResult();
 }
 
 try {
   askUserInput();
   calculate();
 } catch (e) {
-  alert(e.message);
+  e.message === "Division by 0" ? alert(e.message) : console.log(e.message);
 }
