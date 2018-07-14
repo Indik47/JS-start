@@ -65,6 +65,3 @@ console.log (Student.group);
 console.log (Student.showAllStudents());
 console.log (Student.showBestStudent());
 console.log (Student.bestStudent);
-
-
-
