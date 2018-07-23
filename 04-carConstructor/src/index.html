@@ -5,8 +5,35 @@
 	<title>JS-homework-04__carConstructor</title>
 </head>
 <body>
+<main>
+	<div class="container">
+		<div class="row">
+			<select id="brands">
+				<option disabled selected > -- brand -- </option>
+			</select>
 
-    <script src="carConstructor.js"></script>
+			<select id="models">
+				<option disabled selected > -- model -- </option>
+			</select>
 
+			<select id="colors">
+				<option disabled selected > -- color -- </option>
+			</select>
+		</div>
+		<div class="row">
+			<div id="options">
+				<label>Additional options:</label>
+			</div>
+		</div>
+		<div class="row">
+			<button id="create-car">Create car</button>
+		</div>
+	</div>
+<label for="price">Price:</label>
+<input class="car-price" type="input" id="price" value=""><br>
+</main>
+
+<script src="carConstructor.js"></script>
+<script src="pageInit.js"></script>
 </body>
 </html>

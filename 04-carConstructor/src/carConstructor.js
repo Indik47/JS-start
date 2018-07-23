@@ -69,9 +69,30 @@ Car.UNITS = {
         quantity: 1,
         price: 41200
       }
-    },
+    }
   },
-
+  mercedes: {
+    classA: {
+      black: {
+        quantity: 1,
+        price: 28120
+      },
+      white: {
+        quantity: 2,
+        price: 29400
+      }
+    },
+    classC: {
+      black: {
+        quantity: 2,
+        price: 39500
+      },
+      darkRed: {
+        quantity: 1,
+        price: 45200
+      }
+    }
+  }
 };
 Car.OPTIONS = {
   panoRoof: {
@@ -79,16 +100,18 @@ Car.OPTIONS = {
   },
   leatherSeats: {
     price: 3700
+  },
+  chromePaint: {
+    price: 1700
   }
 };
 
-Car.prototype.addOptions = function (option) {
-  if ( !(option in Car.OPTIONS) ) {
-    makeError('No such option');
-  }
-  if ( (!this.options.includes(option)) ) {
-    this.options.push(option);
-  };
+Car.prototype.addOptions = function () {
+  document.querySelectorAll('.options__item-checkbox').forEach( item => {
+    if (item.checked) {
+      this.options.push(item.parentNode.textContent);
+    }
+  });
 };
 
 Car.prototype.getPrice = function () {
@@ -100,7 +123,13 @@ Car.prototype.getPrice = function () {
   return price;
 };
 
-var audiA4 = new Car('audi','a4','black');
-audiA4.addOptions('panoRoof');
-console.log(audiA4);
-console.log(audiA4.getPrice());
+var car = {};
+
+document.getElementById('create-car').addEventListener('click', function () {
+  updateSelection();
+  car = new Car(selectedBrand, selectedModel, selectedColor);
+  car.addOptions();
+  updatePrice();
+});
+
+
