@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>JS-homework-04__carConstructor</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>JS-homework-04__carConstructor</title>
 </head>
 <body>
 <main>
-	<div class="container">
-		<div class="row">
-			<select id="brands">
-				<option disabled selected > -- brand -- </option>
-			</select>
+    <div class="container">
+        <div class="row select">
+            <select class="select__dropdown" id="brands">
+                <option disabled selected> brand</option>
+            </select>
 
-			<select id="models">
-				<option disabled selected > -- model -- </option>
-			</select>
+            <select class="select__dropdown" id="models">
+                <option disabled selected> model</option>
+            </select>
 
-			<select id="colors">
-				<option disabled selected > -- color -- </option>
-			</select>
-		</div>
-		<div class="row">
-			<div id="options">
-				<label>Additional options:</label>
-			</div>
-		</div>
-		<div class="row">
-			<button id="create-car">Create car</button>
-		</div>
-	</div>
-<label for="price">Price:</label>
-<input class="car-price" type="input" id="price" value=""><br>
+            <select class="select__dropdown" id="colors">
+                <option disabled selected> color</option>
+            </select>
+        </div>
+        <div class="row options">
+            <div class="options__title">Options</div>
+            <ul id="options"></ul>
+        </div>
+        <div class="row price">
+            <button id="create-car">Create car</button>
+            <label class="price__label" for="price">Price</label>
+            <input class="price__output" type="input" id="price" autocomplete="off"><br>
+        </div>
+    </div>
+
 </main>
 
 <script src="carConstructor.js"></script>
