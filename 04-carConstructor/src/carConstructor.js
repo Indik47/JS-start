@@ -1,13 +1,20 @@
 'use strict';
 var animTimer;
 
+/**Shows error animation if car cannot be created
+ * @function
+ * */
 var makeError = function (error) {
     price.value = error;
     launchScaleAnimation(price, 'anim', 'error-anim');
-
-    throw new Error(error);
 };
 
+/**Creates new car
+ * @class
+ * @param {string} brand - Car manufacturer brand
+ * @param {string} model - Car model name
+ * @param {string} color - Car color
+ * */
 var Car = function (brand, model, color) {
     this.brand = null;
     this.model = null;
@@ -113,6 +120,9 @@ Car.OPTIONS = {
     }
 };
 
+/**Adds options to created car object. Takes values from selected checkboxes.
+ * @function
+ * */
 Car.prototype.addOptions = function () {
     document.querySelectorAll('.options__item-checkbox').forEach(item => {
         if (item.checked) {
@@ -121,6 +131,10 @@ Car.prototype.addOptions = function () {
     });
 };
 
+/**Calculates the price of a current car
+ * @function
+ * @returns {number} price - price of a car
+ * */
 Car.prototype.getPrice = function () {
     var price = 0;
 
