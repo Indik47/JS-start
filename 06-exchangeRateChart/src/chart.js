@@ -1,4 +1,5 @@
 'use strict';
+var chartData = {};
 var today = moment().format('YYYY-MM-DD');
 var daysFromToday = -14;
 var startDate = moment(today).add(daysFromToday, 'days').format('YYYY-MM-DD');
