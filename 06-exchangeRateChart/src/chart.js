@@ -1,21 +1,31 @@
 'use strict';
+var today = moment().format('YYYY-MM-DD');
+var daysFromToday = -14;
+var startDate = moment(today).add(daysFromToday, 'days').format('YYYY-MM-DD');
 
-var fetchData = function() {
-    for (var date in chartData) {
-        (function () {
-            var dateClosure = date; //make a closure to provide date to async code below
-
-            fetch(`https://exchangeratesapi.io/api/${date}?base=EUR&symbols=USD`)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (myJson) {
-                    chartData[dateClosure] = myJson.rates.USD;
-                    console.log(chartData); //for debug purposes TODO remove later
-                });
-        })();
-    }
+var buildExchangeRateChart = function(date) {
+    fetch(`https://exchangeratesapi.io/api/${date}?base=EUR&symbols=USD`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            putData(myJson, date);
+            
+            if (date !== today ) {
+                date = moment(date).add(1, 'days').format('YYYY-MM-DD');
+                buildExchangeRateChart(date);
+            } else {
+                return "Fetching done";
+            }
+        })
+        .then(function (message) {
+        if (message === "Fetching done") buildChart();
+    });
 };
+
+function putData(myJson, date) {
+    chartData[date] = myJson.rates.USD;
+}
 
 var buildChart = function() {
     var ctx = document.getElementById("myChart");
@@ -45,8 +55,4 @@ var buildChart = function() {
     });
 };
 
-fetchData();
-setTimeout(() => buildChart(), 1000);  //wait for fetch (async code) to finish <- TODO what are other options here?
-
-
-
+buildExchangeRateChart(startDate);
