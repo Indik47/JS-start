@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@keyframes color-change {
+    from {
+        background-color: var(--back-color);
+    }
+    to {
+        background-color: var(--comp-color);
+    }
+}
+
+body, html {
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    --main-color: rgb(101, 213, 174);
+    --comp-color: rgb(255, 207, 102);
+    --back-color: rgb(213, 90, 103);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    background: linear-gradient(#585857, #484a4d);
+    border-radius: 10px;
+    width: 400px;
+    padding: 25px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.transition {
+    transition: 0.3s ease-in-out ;
+}
+
+.text {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: #cccccc;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 30px;
+    height: 52px;
+    width: 330px;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+.addAnimation {
+    transform: scale3d(1.05,1.05,1.05);
+    animation-name: color-change;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.text:hover {
+    transform: scale3d(1.05,1.05,1.05);
+    animation-name: color-change;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.inner__item {
+    color: var(--main-color);
+    margin: 0 20px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.inner__item:hover {
+    color: #1a332b;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--back-color);
+    transform: scale3d(1.05,1.05,1.05);
+}
+
+.input-block {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    text-align: center;
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.input-block > span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100%;
+    flex: 1;
+    border: 2px solid var(--main-color);
+    background-color: var(--main-color);
+    font-size: 0.9em;
+    padding: 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-block > input {
+    border: 2px solid var(--main-color);
+    flex: 3;
+    height: 100%;
+    font-family: Montserrat;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+.input-block__field {
+    border-radius: 0 5px 5px 0;
+}
+
+.input-block > input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.input-block.buttons {
+    justify-content: space-between;
+}
+
+.input-block > input[type="button"] {
+    border: none;
+}
+
+.input-block > input[type="button"]:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.input-block > input[type="button"]:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.input-block > input[type="button"]:hover {
+    color: #1a332b;
+    padding: 7px;
+    border: none;
+    background-color: var(--comp-color);
+}
+
+[data-tip] {
+    position:relative;
+}
+
+[data-tip]:after {
+    display:none;
+    content:attr(data-tip);
+    position:absolute;
+    top: 35px;
+    left:0px;
+    padding: 0 8px;
+    background:var(--back-color);
+    color:#fff;
+    z-index:9;
+    font-size: 0.75em;
+    height:14px;
+    line-height:14px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+[data-tip]:hover:after {
+    display:block;
+}
+
+.table__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-block.buttons input[value="Create table"] {
+    border-radius: 5px;
+    border-radius: 5px;
+}
+
+td {
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    padding:5px;
+    background: var(--main-color);
+    border-radius: 2px;
+}
+
+td:hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+    background: #1a332b;
+    color: #fff;
+}
+
+.row.table > .input-block.buttons {
+    width: auto;
+}
