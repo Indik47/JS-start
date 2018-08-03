@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <title>JS-homework-05__domBasics</title>
+</head>
+<body>
+<main>
+
+    <div class="container">
+        <div class="row">
+            <p class="text transition">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, recusandae.</p>
+            <div class="inner">
+                <a class="inner__item transition" href="#"><i class="fas fa-address-card"></i></a>
+                <a class="inner__item transition" href="#"><i class="fab fa-accusoft"></i></a>
+                <a class="inner__item transition" href="#"><i class="fas fa-american-sign-language-interpreting"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="inner">
+                <div class="input-block" data-tip="Example 1: NodeName = p, ClassName = text">
+                    <span>Node Name</span>
+                    <input class="input-block__field" id="nodeName" type="text" autocomplete=”off”>
+                </div>
+
+                <div class="input-block" data-tip="Example 2: NodeName = a, ClassName = inner__item">
+                    <span>Class Name</span>
+                    <input class="input-block__field" id="className" type="text" autocomplete=”off”>
+                </div>
+                <div class="input-block buttons">
+                    <input type="button" value="Has Class" class="transition">
+                    <input type="button" value="Remove Class" class="transition">
+                    <input type="button" value="Add Class" class="transition">
+                </div>
+            </div>
+        </div>
+        <div class="row table">
+            <div class="input-block buttons">
+                <input type="button" value="Create table" class="transition create-table">
+            </div>
+            <div class="table__container">
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="domBasics.js"></script>
+<script src="eventHandlers.js"></script>
+<script src="makeTable.js"></script>
+</body>
+</html>
