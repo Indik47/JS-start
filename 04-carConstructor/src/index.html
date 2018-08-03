@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>JS-homework-04__carConstructor</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="row select">
+            <select class="select__dropdown" id="brands">
+                <option disabled selected> brand</option>
+            </select>
+
+            <select class="select__dropdown" id="models">
+                <option disabled selected> model</option>
+            </select>
+
+            <select class="select__dropdown" id="colors">
+                <option disabled selected> color</option>
+            </select>
+        </div>
+        <div class="row options">
+            <div class="options__title">Options</div>
+            <ul id="options"></ul>
+        </div>
+        <div class="row price">
+            <button id="create-car">Create car</button>
+            <label class="price__label" for="price">Price</label>
+            <input class="price__output" type="input" id="price" autocomplete="off"><br>
+        </div>
+    </div>
+
+</main>
+<script src="carConstructor.js"></script>
+<script src="pageInit.js"></script>
+</body>
+</html>

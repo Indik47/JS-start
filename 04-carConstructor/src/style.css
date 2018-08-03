@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.anim {
+    transition: 0.2s ease-in-out;
+}
+
+.error-anim {
+    background-color: rgba(255, 51, 94, 0.8);
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.sucess-anim {
+    background-color: rgba(29, 238, 176, 0.8);
+    transform: scale3d(1.05, 1.05, 1.05);
+}
+
+body, html {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    --select-fields-color: rgb(255, 223, 191);
+    --hover-select-color: rgb(29, 238, 176);
+    --big-font-size: 14px;
+}
+
+.container {
+    padding-top: 20px;
+    background-color: rgba(223, 240, 250, 0); /* container background */
+}
+
+.row {
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin: 10px auto;
+    width: 610px;
+    background-color: rgba(223, 240, 250, 1); /* row background */
+}
+
+.select__dropdown {
+    background-color: var(--select-fields-color);
+    border: none;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    position: relative;
+    font-family: Montserrat;
+    border-radius: 5px;
+}
+
+.row.options {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+.options__title {
+    padding-bottom: 10px;
+    font-size: var(--big-font-size);
+}
+
+button#create-car {
+    background-color: rgba(255, 255, 255, 0);
+    border: 3px solid var(--select-fields-color);
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s ease-in-out;
+    font-family: Montserrat;
+    width: 200px;
+    border-radius: 5px 0 0 5px;
+}
+
+#create-car:hover {
+    background-color: var(--hover-select-color);
+}
+
+.row.price {
+    display: flex;
+}
+
+.price__label {
+    background-color: var(--select-fields-color);
+    padding: 10px 32px;
+    font-size: var(--big-font-size);
+}
+
+.price__output {
+    border: none;
+    font-size: 14px;
+    padding: 0 16px;
+    width: inherit;
+    border-radius: 0 5px 5px 0;
+    font-family: Montserrat;
+    text-transform: capitalize;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+    display: flex;
+}
+
+/*CHECKBOX*/
+/* The check-container */
+.check-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox and move it underneath fake checkbox*/
+.check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: -6px;
+    top: -4px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--select-fields-color);
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a background */
+.check-container input:checked ~ .checkmark {
+    background-color: var(--hover-select-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
