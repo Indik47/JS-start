@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>JS-hw-07-EventsBasics</title>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="row menu">
+            <div class="column">
+                <button class="btn start">New test</button>
+                <div class="dropdown">
+                    <button class="btn dropbtn">Settings</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="selected" data-value="add">+</a>
+                        <a href="#" class="selected" data-value="subtract">-</a>
+                        <a href="#" class="selected" data-value="divide">/</a>
+                        <a href="#" class="selected" data-value="multiply">*</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <button class="btn check">Check</button>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container expressions">
+
+    </div>
+    <div class="end-screen">
+        <div class="end-screen__inner">
+            <div>
+                <p class="end-screen__title"></p>
+            </div>
+            <button class="btn end-screen__start">Start again</button>
+            <button class="btn end-screen__cancel">Cancel</button>
+        </div>
+    </div>
+</main>
+<script src="variables.js"></script>
+<script src="generalFunctions.js"></script>
+<script src="events.js"></script>
+<script src="pageInit.js"></script>
+</body>
+</html>
