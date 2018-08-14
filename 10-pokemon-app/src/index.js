@@ -46,6 +46,11 @@ const renderPokemonList = function (url) {
     return list;
 };
 
+/**
+ * Renders single pokemon detailed info
+ * @param pokemon - json fetched from API
+ * @return {HTMLDivElement} - div containing pokemon detailed info
+ */
 const renderPokemonDetails = function (pokemon) {
     console.log(pokemon);
     const details = document.querySelector('#details');
@@ -69,6 +74,12 @@ const renderPokemonDetails = function (pokemon) {
     return div;
 };
 
+/**
+ * Renders single pokemon short info for display in a list
+ * @param data
+ * @param index
+ * @return {HTMLDivElement} - div containing pokemon info
+ */
 const renderPokemonListItem = function(data, index) {
     const div = document.createElement('div');
 
@@ -79,6 +90,9 @@ const renderPokemonListItem = function(data, index) {
     return div;
 };
 
+/**
+ * Clears list of pokemons
+ */
 const clearPokemonsList = function () {
     const list = document.querySelector('#list');
     while (list.firstChild) {
@@ -86,6 +100,9 @@ const clearPokemonsList = function () {
     }
 };
 
+/**
+ * Add event listener to list of pokemons
+ */
 const addEventListeners = function () {
     const list = document.getElementById('list');
     list.addEventListener('click', function clickPoke(e) {
