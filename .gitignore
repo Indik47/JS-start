@@ -2,6 +2,7 @@
 node_modules/
 .sass-cache
 out
+*/package-lock.json
 
 
 
