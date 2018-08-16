@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body, html {
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: #585857;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    --main-color: rgb(101, 213, 174);
+    --comp-color: rgb(255, 207, 102);
+    --back-color: rgb(213, 90, 103);
+}
+
+.row {
+    background: #484a4d;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.col.inputs {
+    justify-content: center;
+    text-align: center;
+    height: 35px;
+}
+
+.col.inputs label {
+    border-radius: 5px;
+    margin: auto;
+    margin-left:10px;
+}
+
+.col.inputs input {
+    background-color: #585857;
+    border: none;
+    width: 270px;
+    border-radius: 5px;
+    padding-left: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.row .col.inputs .inputs__item.code {
+    width: 150px;
+}
+
+.row .col.inputs .inputs__item.code:focus {
+    width: 170px;
+}
+
+.row .col.inputs .inputs__item:focus {
+    width: 290px;
+}
+
+.col.buttons {
+    justify-content: space-between;
+}
+
+.col input[type="button"] {
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    width: 70px;
+}
+
+.col input[type="button"]:hover {
+    color: #1a332b;
+    padding: 7px;
+    border: none;
+    background-color: var(--comp-color);
+}
+
+.table__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* table element */
+td {
+    text-align: center;
+    width: 10px;
+    height: 10px;
+    background: var(--main-color);
+    font-size: 11px;
+}
+
+td:hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+    background: #1a332b;
+
+}
+
+tr:first-child td, tr td:first-child {
+    background-color: var(--comp-color);
+}
+
+table tr:first-child td:hover, table tr td:first-child:hover {
+    background-color: black;
+}
+
+.td-hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+    background: #1a332b;
+    color: #fff;
+}
+
+
+
