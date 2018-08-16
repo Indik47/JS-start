@@ -1,0 +1,9 @@
+.idea/*
+node_modules/*
+public/*
+.sass-cache
+out
+package-lock.json
+
+
+
